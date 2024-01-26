@@ -1,0 +1,2 @@
+# Amoba
+Iksz és Kör
