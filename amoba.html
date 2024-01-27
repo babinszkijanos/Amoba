@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amőba</title>
+    <style>
+      body {
+        background-image: url('hatter.jpg');
+      }
+      #hidden-paragraph {
+          display: none;
+      }
+    </style>
     <link rel="stylesheet" href="amobahogy.css">
 </head>
-<style>
-    body {
-      background-image: url('hatter.jpg');
-    }
-    #hidden-paragraph {
-        display: none;
-    }
-</style>
 <body class="center">
     <h1>Amőba</h1>
     <div class="center" id="Főoldal">
@@ -24,6 +24,7 @@
       <br>
       <button onclick="exit()" class="button">Kilépés</button>
     </div>
+    <div class="center" id="Tanulj">
     <p id="hidden-paragraph">
         Te X vagy, a másik játékos pedig 0. 
         <br>
@@ -32,18 +33,18 @@
     </p>
     <br>
     <button onclick="main()" class="button">Visszalépés</button>
+  </div>
 
     <div class="center" id="Játék">
       <div class="center" style="margin: 5px;">
-        <h3 id="textPlayer" style="font-size: 0.9rem;">Aktív játékos</h2>
-        <h3 id="textComd" style="font-size: 0.9rem;">Második játékos jön.</h2>
+        <h3 id="textPlayer" style="font-size: 0.9rem;">Aktív játékos</h3>
+        <h3 id="textComd" style="font-size: 0.9rem;">Második játékos jön.</h3>
       </div>
       <canvas id="Amőba-tábla" class="center"></canvas>
       <audio src="cp.mp3" controls>
         <p>Ha ezt olvasod, akkor a böngésződ nem támogatja a zenét.</p>
       </audio>
     </div>
-
     <script src="amobamiert.js"></script>
 </body>
 </html>

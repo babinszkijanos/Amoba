@@ -11,38 +11,48 @@ canvas.height = canvasSize;
 context.translate(0.5, 0.5);
 context.lineWidth = 10;
 
-
 function main() {
-  document.getElementById("main").style.display = "block";
-  document.getElementById("learn").style.display = "none";
-  document.getElementById("game").style.display = "none";
+  document.getElementById("Főoldal").style.display = "block";
+  document.getElementById("Tanulj").style.display = "none";
+  document.getElementById("Játék").style.display = "none";
 }
 
-
 function start() {
-  document.getElementById("main").style.display = "none";
-  document.getElementById("learn").style.display = "none";
-  document.getElementById("game").style.display = "block";
+  document.getElementById("Főoldal").style.display = "none";
+  document.getElementById("Tanulj").style.display = "none";
+  document.getElementById("Játék").style.display = "block";
+
+  document.getElementById("textPlayer").style.display = "none";
+  document.getElementById("textComd").style.display = "none";
+  resetGameState();
 
   canvas.addEventListener('mouseup', function (event) {
-    addPlayingPiece(getCanvasMousePosition(event));
+    var mousePosition = getCanvasMousePosition(event);
+    addPlayingPiece(mousePosition);
     drawBoard();
     setTimeout(() => {
-      if(!checkWhoWin(1) && !checkWhoWin(2)){
+      if (!checkWhoWin(1) && !checkWhoWin(2)) {
         checkIsOver();
       }
     }, 100);
   });
+
   drawBoard();
 }
 
+  function resetGameState() {
+  
+    count = 0;
+    player = 1;
+    board = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
+    drawBoard();  
+  }
 
-function learn() {
-  document.getElementById("main").style.display = "none";
-  document.getElementById("learn").style.display = "block";
-  document.getElementById("game").style.display = "none";
+
+function Tanulj() {
+  var paragraph = document.getElementById("hidden-paragraph");
+  paragraph.style.display = (paragraph.style.display === 'none' || paragraph.style.display === '') ? 'block' : 'none';
 }
-
 
 function exit() {
   window.close();
@@ -153,13 +163,13 @@ function checkWhoWin(number) {
   for (let i = 0; i < 3; i++) {
     if ((board[i][0] === number && board[i][1] === number && board[i][2] === number) || (board[0][i] === number && board[1][i] === number && board[2][i] === number)) {
       isWin = true;
-      alert("Játékos" + number + " Nyertél! ");
+      alert("Játékos " + number + " Győztél!");
       window.location.reload();
     }
   }
   if ((board[0][0] === number && board[1][1] === number && board[2][2] === number) || (board[0][2] === number && board[1][1] === number && board[2][0] === number)) {
     isWin = true;
-    alert("Játékos " + number + " Nyertél! ");
+    alert("Játékos " + number + " Győztél!");
     window.location.reload();
   }
   return isWin;
@@ -168,14 +178,9 @@ function checkWhoWin(number) {
 function checkIsOver() {
 
   if (count >= 9) {
-    alert("Vége a játéknak!!!");
+    alert("Döntetlen!");
     window.location.reload();
   }
 }
-function learn() {
-    var paragraph = document.getElementById("hidden-paragraph");
-    
-    paragraph.style.display = (paragraph.style.display === 'none' || paragraph.style.display === '') ? 'block' : 'none';
-}
 
-window.onload = main(); 
+window.onload = main;
