@@ -5,16 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amőba</title>
     <link rel="stylesheet" href="amobahogy.css">
-    <script src="amobamiert.js"></script>
 </head>
 <style>
     body {
       background-image: url('hatter.jpg');
     }
-    </style>
-<body class="center"></body>
-<h1>Amőba<h2>
-    <div class="center" id="main">
+    #hidden-paragraph {
+        display: none;
+    }
+</style>
+<body class="center">
+    <h1>Amőba</h1>
+    <div class="center" id="Főoldal">
       <h4>Játsz és nyerj!</h4>
       <button onclick="start()" class="button">Új játék</button>
       <br>
@@ -22,25 +24,26 @@
       <br>
       <button onclick="exit()" class="button">Kilépés</button>
     </div>
-      <p>
-          Te X vagy, a másik játékos pedig 0. 
-          <br>
-          Aki először hármat be tud illeszteni egymás mellé-alá-keresztbe, az nyert.
-          Ha betelik a kilenc rubrika, vagy senki nem tud hármat kigyűjteni, akkor a játék döntetlennel ér véget.
-      </p>
-      <br>
-      <button onclick="main()" class="button">Visszalépés</button>
-    </div>
-    <div class="center" id="game">
+    <p id="hidden-paragraph">
+        Te X vagy, a másik játékos pedig 0. 
+        <br>
+        Aki először hármat be tud illeszteni egymás mellé-alá-keresztbe, az nyert.
+        Ha betelik a kilenc rubrika, vagy senki nem tud hármat kigyűjteni, akkor a játék döntetlennel ér véget.
+    </p>
+    <br>
+    <button onclick="main()" class="button">Visszalépés</button>
+
+    <div class="center" id="Játék">
       <div class="center" style="margin: 5px;">
         <h3 id="textPlayer" style="font-size: 0.9rem;">Aktív játékos</h2>
-          <h3 id="textComd" style="font-size: 0.9rem;">Második játékos jön.</h2>
+        <h3 id="textComd" style="font-size: 0.9rem;">Második játékos jön.</h2>
       </div>
-      <canvas id="Amőba tábla" class="center"></canvas>
+      <canvas id="Amőba-tábla" class="center"></canvas>
       <audio src="cp.mp3" controls>
         <p>Ha ezt olvasod, akkor a böngésződ nem támogatja a zenét.</p>
-        </audio>
+      </audio>
     </div>
 
+    <script src="amobamiert.js"></script>
 </body>
 </html>

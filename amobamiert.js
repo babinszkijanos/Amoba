@@ -2,7 +2,7 @@ var count = 0;
 var player = 1;
 var board = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
 
-var canvas = document.getElementById("tic-tac-toe-board");
+var canvas = document.getElementById("Amőba-tábla");
 var context = canvas.getContext('2d');
 var canvasSize = 500;
 var sectionSize = canvasSize / 3;
@@ -153,13 +153,13 @@ function checkWhoWin(number) {
   for (let i = 0; i < 3; i++) {
     if ((board[i][0] === number && board[i][1] === number && board[i][2] === number) || (board[0][i] === number && board[1][i] === number && board[2][i] === number)) {
       isWin = true;
-      alert("Player " + number + " win the Game");
+      alert("Játékos" + number + " Nyertél! ");
       window.location.reload();
     }
   }
   if ((board[0][0] === number && board[1][1] === number && board[2][2] === number) || (board[0][2] === number && board[1][1] === number && board[2][0] === number)) {
     isWin = true;
-    alert("Player " + number + " win the Game");
+    alert("Játékos " + number + " Nyertél! ");
     window.location.reload();
   }
   return isWin;
@@ -168,9 +168,14 @@ function checkWhoWin(number) {
 function checkIsOver() {
 
   if (count >= 9) {
-    alert("Game is Over!!!");
+    alert("Vége a játéknak!!!");
     window.location.reload();
   }
+}
+function learn() {
+    var paragraph = document.getElementById("hidden-paragraph");
+    
+    paragraph.style.display = (paragraph.style.display === 'none' || paragraph.style.display === '') ? 'block' : 'none';
 }
 
 window.onload = main(); 
