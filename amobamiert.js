@@ -86,8 +86,7 @@ function getCanvasMousePosition(event) {
 }
 
 function clearPlayingArea(xCordinate, yCordinate) {
-  context.fillStyle = "#fff";
-  context.fillRect(
+  context.clearRect(
     xCordinate,
     yCordinate,
     sectionSize,
