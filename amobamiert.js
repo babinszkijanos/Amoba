@@ -50,7 +50,7 @@ function start() {
 
 
 function Tanulj() {
-  var paragraph = document.getElementById("hidden-paragraph");
+  var paragraph = document.getElementById("Tanulj");
   paragraph.style.display = (paragraph.style.display === 'none' || paragraph.style.display === '') ? 'block' : 'none';
 }
 
